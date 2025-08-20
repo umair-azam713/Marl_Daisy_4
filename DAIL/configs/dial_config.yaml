@@ -1,0 +1,40 @@
+# configs/dial_config.yaml
+seed: 1
+env:
+  name: simple_spread_v3
+  num_agents: 3
+  max_steps: 50
+  continuous_actions: true
+  K_vocab: 4
+
+train:
+  episodes: 1000
+  device: cpu
+
+ppo:
+  lr: 3.0e-4
+  gamma: 0.95
+  gae_lambda: 0.95
+  clip_ratio: 0.20
+  update_epochs: 4
+  minibatches: 4
+  value_coef: 0.5
+  entropy_coef: 0.01
+  grad_clip: 1.0
+
+message:
+  vocab_size: 4
+  entropy_coef: 0.01
+  gumbel_tau_init: 1.0
+  gumbel_tau_final: 0.3
+  gumbel_tau_anneal_episodes: 700  # linearly anneal tau from init→final over these many episodes
+
+net:
+  hidden: 128
+  hidden_layers: 2
+
+logging:
+  results_dir: results
+  csv_name: dial_simple_spread_yaml.csv
+  print_every: 50
+  ma_window: 20

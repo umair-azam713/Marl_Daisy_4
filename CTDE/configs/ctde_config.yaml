@@ -1,0 +1,19 @@
+# configs/ctde_config.yaml
+
+seed: 1
+num_episodes: 1000
+max_steps: 50
+k_vocab: 4
+learning_rate: 0.0003
+gamma: 0.95
+gae_lambda: 0.95
+clip_ratio: 0.2
+update_epochs: 4
+minibatches: 4
+entropy_coef: 0.01
+msg_entropy_coef: 0.01
+val_coef: 0.5
+device: "cpu"
+
+results_dir: "results_ctde"
+csv_filename: "ctde_simple_spread_yml.csv"
